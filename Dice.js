@@ -13,7 +13,6 @@ class Dice {
 const diceRoll = new Dice(6)
 const outPut = diceRoll.roll()
 
-// console.log(`You rolled a ${outPut}`);
 
 module.exports = Dice;
 

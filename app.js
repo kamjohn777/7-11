@@ -56,31 +56,14 @@ const players = Player.players;
     }
 
 
-    // for (let i = 0; i < 10; i++) {
-    //     diceRoll(currentRollResults);
-    //     checkDice();
-    // }
+  
 
     diceRoll(currentRollResults);
     checkDice()
-    
-
-    // console.log("This is the roll result: " + rollResult);
-    // console.log(currentRollResults);
-    // let playersArr = [0,1];
-    // let winningRolls = [7,11];
-    // let losingRolls = [2,3,12];
-
-    // if (Player.id === winningRolls) {
-    //     console.log(`${Player.id} rolled a ${winningRolls}`);
-    // }
-
-
-    
-
 
 //  We can just use regualr funcitons and we dont need to use a main app component
 
+// Test for game
 let currentPlayerIndex = 0; // Initialize the current player index
 
 // Create a dice
