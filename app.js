@@ -12,26 +12,34 @@ const players = Player.players;
     let currentRollResults = [];
 
     const diceRoller = new Dice(6);
-    let rollResult = diceRoller.roll();
+    // let rollResult = diceRoller.roll();
+    // let rollResult = outPut;
 
-
-    function diceRoll(resultArray) {
+    function diceRoll() {
       rollResult = diceRoller.roll();
-        // currentRollResults.push(rollResult);
-        resultArray.push(rollResult);
-        console.log(`You rolled a ${rollResult}`);
+    //   return rollResult
+    //   const dice1 = Math.floor(Math.random() * this.sides) + 1;
+    //   const dice2 = Math.floor(Math.random() * this.sides) + 1;
+    //   return dice1 + dice2;
+        currentRollResults.push(rollResult);
+        // resultArray.push(rollResult);
+        // currentRollResults.push(dice1 + dice2);
+        // console.log(`You rolled a ${rollResult}`);
+        checkDice();
     }
 
     function checkDice() {
         if(currentRollResults[0] === "") {
-            if(rollResult === 7 || 11) {
+            if(rollResult=== 7 || 11) {
                 // this.socre += 1;
                 players[currentRoller].score += 1;
                 // currentRollResults = 0;
                 currentRoller = 0;
+                console.log(`${players} won this round they rolled a ${rollResult}`);
             } else if(rollResult === 2 || 3|| 12) {
                 players[currentRoller].score -= 1;
                 currentRoller = 1;
+                console.log(`${players} loss this round they rolled a ${rollResult}`);
                 changeTurns();
             } else {
                 currentRollResults.push(rollResult);
@@ -73,7 +81,7 @@ function playTurn() {
   const currentPlayer = players[currentPlayerIndex];
 
   // Roll the dice and display the result
-  const rollResult = currentPlayer.rollDice(dice);
+//   const rollResult = currentPlayer.rollDice(dice);
   console.log(rollResult);
 
   // Check if the game is over or switch to the next player
@@ -86,7 +94,7 @@ function playTurn() {
   currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
 
   // Continue the game loop
-  setTimeout(playTurn, 1000); // Adjust the delay as needed
+  setTimeout(playTurn, 3000); // Adjust the delay as needed
 }
 
 // Start the game loop
